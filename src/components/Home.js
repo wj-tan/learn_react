@@ -13,7 +13,7 @@ class Home extends Component {
 
 
             <div id="container_buttons">
-            <a href="#" class="a_demo_four">Register New Appointment</a>
+            <a href="NewAppointment" class="a_demo_four">Register New Appointment</a>
             </div>
 
         </span>  );
