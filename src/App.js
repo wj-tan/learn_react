@@ -13,7 +13,7 @@ class app extends Component {
     this.state = {  }
   }
   render() { 
-    return ( <div> 
+    return ( <div id='content'> 
       {/* Content */}
         <Router>
           <Switch>
