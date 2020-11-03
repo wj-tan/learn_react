@@ -6,7 +6,7 @@ class NewAppointment extends Component {
     }
     render() { 
         return ( <span>
-            New Appointment Page
+            <h2>Make New Appointment</h2>
         </span> );
     }
 }
