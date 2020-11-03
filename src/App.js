@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
@@ -47,7 +47,7 @@ class app extends Component {
         </Router>
 
 
-      <div style={{display: 'flex', marginTop: 560}}>
+      <div style={{display: 'flex'}}>
         <a href='/Home'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></a>
         <a href='/MyAppointment'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></a>
         <a href='/NewAppointment'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></a>
