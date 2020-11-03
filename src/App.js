@@ -6,14 +6,19 @@ import MyAppointment from './components/MyAppointment';
 import NewAppointment from './components/NewAppointment';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
+import Register from './components/Register';
+import Login from './components/Login';
 
 class app extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      isLoggedIn: true
+     }
   }
   render() { 
-    return ( <div id='content'> 
+    if (this.state.isLoggedIn){
+      return ( <div id='content'> 
       {/* Content */}
         <Router>
           <Switch>
@@ -32,6 +37,12 @@ class app extends Component {
             <Route exact path={['/MyProfile']}>
               <MyProfile/>
             </Route>
+            <Route exact path={['/Register']}>
+              <Register/>
+            </Route>
+            <Route exact path={['/Login']}>
+              <Login/>
+            </Route>
           </Switch>
         </Router>
 
@@ -44,6 +55,41 @@ class app extends Component {
         <a href='/MyProfile'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></a>
       </div>
     </div> );
+    }
+
+    else{
+      return ( <div id='content'> 
+      {/* Content */}
+        <Router>
+          <Switch>
+            <Route exact path={['/Home']}>
+              <Home/>
+            </Route>
+            <Route exact path={['/MyAppointment']}>
+              <MyAppointment/>
+            </Route>
+            <Route exact path={['/NewAppointment']}>
+              <NewAppointment/>
+            </Route>
+            <Route exact path={['/Search']}>
+              <Search/>
+            </Route>
+            <Route exact path={['/MyProfile']}>
+              <MyProfile/>
+            </Route>
+            <Route exact path={['/Register']}>
+              <Register/>
+            </Route>
+            <Route exact path={['/Login']}>
+              <Login/>
+            </Route>
+          </Switch>
+        </Router>
+    </div> );
+  }
+    
+    
+ 
   }
 }
 
