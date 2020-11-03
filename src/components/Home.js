@@ -7,7 +7,15 @@ class Home extends Component {
     }
     render() { 
         return ( <span>
-            <h2>Home Page</h2>
+            <h1 id="header">Welcome</h1>
+            <h1 id="name">Ng Jia Cheng</h1>
+            <h1 id="nric">S9601418Z</h1>
+
+
+            <div id="container_buttons">
+            <a href="#" class="a_demo_four">Register New Appointment</a>
+            </div>
+
         </span>  );
     }
 }
