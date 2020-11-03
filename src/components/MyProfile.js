@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Form, Button, Col, Row, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 class MyProfile extends Component {
     constructor(props) {
