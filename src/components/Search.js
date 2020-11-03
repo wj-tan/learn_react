@@ -6,7 +6,7 @@ class Search extends Component {
     }
     render() { 
         return ( <span>
-            Search page
+            <h2>Search Appointment</h2>
         </span> );
     }
 }
