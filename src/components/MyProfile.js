@@ -6,7 +6,7 @@ class MyProfile extends Component {
     }
     render() { 
         return ( <span>
-            My Profile Page
+            <h2>My Profile</h2>
         </span> );
     }
 }
