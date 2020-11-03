@@ -6,6 +6,8 @@ import MyAppointment from './components/MyAppointment';
 import NewAppointment from './components/NewAppointment';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
+import NewAppointment2 from './components/NewAppointment2';
+import NewAppointment3 from './components/NewAppointment3';
 
 class app extends Component {
   constructor(props) {
@@ -31,6 +33,12 @@ class app extends Component {
             </Route>
             <Route exact path={['/MyProfile']}>
               <MyProfile/>
+            </Route>
+            <Route exact path={['/NewAppointment2']}>
+              <NewAppointment2/>
+            </Route>
+            <Route exact path={['/NewAppointment3']}>
+              <NewAppointment3/>
             </Route>
           </Switch>
         </Router>

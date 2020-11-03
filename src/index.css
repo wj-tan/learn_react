@@ -39,3 +39,8 @@ h2 {
   justify-content: space-between;
   background-color: white;
 }
+
+#newappointment3{
+  display: flex;
+  justify-content: center;
+}
