@@ -36,12 +36,12 @@ class app extends Component {
         </Router>
 
 
-      <div style={{display: 'flex', marginTop: 50}}>
-        <a href="/Home" class="button">Home</a>
-        <a href='/MyAppointment' class="button">My Appointment&nbsp;</a> 
-        <a href='/NewAppointment' class="button">New Appointment&nbsp;</a> 
-        <a href='/Search' class="button">Search&nbsp;</a> 
-        <a href='/MyProfile' class="button">My Profile&nbsp;</a> 
+      <div style={{display: 'flex', marginTop: 560}}>
+        <a href='/Home'><button variant="primary"><img src="logo192.png" width='50px' height='50px'></img>Home&nbsp;</button></a>
+        <a href='/MyAppointment'><button variant="primary"><img src="logo192.png" width='50px' height='50px'></img>Appointments&nbsp;</button></a>
+        <a href='/NewAppointment'><button variant="primary"><img src="logo192.png" width='50px' height='50px'></img>NewAppointment&nbsp;</button></a>
+        <a href='/Search'><button variant="primary"><img src="logo192.png" width='50px' height='50px'></img>Search&nbsp;</button></a>
+        <a href='/MyProfile'><button variant="primary"><img src="logo192.png" width='50px' height='50px'></img>Profile&nbsp;</button></a>
       </div>
     </div> );
   }
