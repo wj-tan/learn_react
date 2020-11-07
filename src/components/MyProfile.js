@@ -39,7 +39,6 @@ class MyProfile extends Component {
                 <Button variant="primary" type="submit">
                     Save
                 </Button>
-                
             </Form>
         </span>);
     }
