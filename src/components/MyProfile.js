@@ -21,10 +21,10 @@ class MyProfile extends Component {
                 </Col>
 
                 <Col>
-                        <Form.Group controlId="formNRIC">
-                            <Form.Label>NRIC</Form.Label>
-                            <Form.Control value="SXXXX928C" disabled/>
-                        </Form.Group>
+                    <Form.Group controlId="formNRIC">
+                        <Form.Label>NRIC</Form.Label>
+                        <Form.Control value="SXXXX928C" disabled/>
+                    </Form.Group>
                 </Col>
 
                 <Form.Row>
