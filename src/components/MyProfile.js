@@ -29,8 +29,8 @@ class MyProfile extends Component {
                         </Form.Group>
                     </Col>
                     <Col>
-                        <Form.Group as={Col} controlId="formUnit">
-                            <Form.Label>Unit</Form.Label>
+                        <Form.Group as={Col} controlId="formVocation">
+                            <Form.Label>Vocation</Form.Label>
                             <Form.Control value="EMT" disabled/>
                         </Form.Group>
                     </Col>
@@ -42,11 +42,26 @@ class MyProfile extends Component {
                         <Form.Control defaultValue="1234 Main St" />
                     </Form.Group>
                 </Col>
+
+                <Form.Row>
+                    <Col>
+                        <Form.Group as={Col} controlId="formPcode">
+                            <Form.Label>Postal Code</Form.Label>
+                            <Form.Control maxlength="6" defaultValue="123456" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group as={Col} controlId="formUnitNo">
+                            <Form.Label>Unit-No</Form.Label>
+                            <Form.Control maxlength="7" defaultValue="05-716" />
+                        </Form.Group>
+                    </Col>
+                </Form.Row>
                 
                 <Col>
                     <Form.Group controlId="formContact">
-                        <Form.Label>Contact</Form.Label>
-                        <Form.Control defaultValue="91248543"/>
+                        <Form.Label>Contact No</Form.Label>
+                        <Form.Control maxlength="8" defaultValue="91248543"/>
                     </Form.Group>
                 </Col>
           
