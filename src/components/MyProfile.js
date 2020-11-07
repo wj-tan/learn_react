@@ -17,7 +17,7 @@ class MyProfile extends Component {
                 <Col>
                     <Form.Group controlId="formName">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control value="Eye Drop King Tan Wei Jian" disabled/>
+                        <Form.Control value="Handsome Boy" disabled/>
                     </Form.Group>
                 </Col>
 
