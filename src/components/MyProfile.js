@@ -12,7 +12,6 @@ class MyProfile extends Component {
         return (<span>
             <br></br>
             <h2>My Profile</h2>
-            <br></br>
             <Form>
                 <Col>
                     <Form.Group controlId="formName">
@@ -21,11 +20,18 @@ class MyProfile extends Component {
                     </Form.Group>
                 </Col>
 
-                <Form.Row>
-                    <Col>
-                        <Form.Group as={Col} controlId="formNRIC">
+                <Col>
+                        <Form.Group controlId="formNRIC">
                             <Form.Label>NRIC</Form.Label>
                             <Form.Control value="SXXXX928C" disabled/>
+                        </Form.Group>
+                </Col>
+
+                <Form.Row>
+                    <Col>
+                        <Form.Group as={Col} controlId="formCamp">
+                            <Form.Label>Camp</Form.Label>
+                            <Form.Control value="SCDF HQ" disabled/>
                         </Form.Group>
                     </Col>
                     <Col>
@@ -66,7 +72,7 @@ class MyProfile extends Component {
                 </Col>
           
                 <Col>
-                    <Button variant="primary" size="lg" type="submit" block>
+                    <Button variant="primary" type="submit" block>
                         Save
                     </Button>
                 </Col>
