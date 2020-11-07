@@ -14,7 +14,7 @@ class MyProfile extends Component {
             <h2>My Profile</h2>
             <br></br>
             <Form>
-                <Col md-6>
+                <Col>
                     <Form.Group controlId="formName">
                         <Form.Label>Name</Form.Label>
                         <Form.Control value="Eye Drop King Tan Wei Jian" disabled/>
@@ -22,13 +22,13 @@ class MyProfile extends Component {
                 </Col>
 
                 <Form.Row>
-                    <Col md-3>
+                    <Col>
                         <Form.Group as={Col} controlId="formNRIC">
                             <Form.Label>NRIC</Form.Label>
                             <Form.Control value="SXXXX928C" disabled/>
                         </Form.Group>
                     </Col>
-                    <Col md-3>
+                    <Col>
                         <Form.Group as={Col} controlId="formUnit">
                             <Form.Label>Unit</Form.Label>
                             <Form.Control value="EMT" disabled/>
@@ -36,21 +36,21 @@ class MyProfile extends Component {
                     </Col>
                 </Form.Row>
 
-                <Col md-6>
+                <Col>
                     <Form.Group controlId="formAddress">
                         <Form.Label>Address</Form.Label>
                         <Form.Control defaultValue="1234 Main St" />
                     </Form.Group>
                 </Col>
                 
-                <Col md-6>
+                <Col>
                     <Form.Group controlId="formContact">
                         <Form.Label>Contact</Form.Label>
                         <Form.Control defaultValue="91248543"/>
                     </Form.Group>
                 </Col>
           
-                <Col md-6>
+                <Col>
                     <Button variant="primary" size="lg" type="submit" block>
                         Save
                     </Button>
