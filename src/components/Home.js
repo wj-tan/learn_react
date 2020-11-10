@@ -7,14 +7,40 @@ class Home extends Component {
     }
     render() { 
         return ( <span>
-            <h1 id="header">Welcome</h1>
+            <p class="textwrap">
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+
+            
+            <h1 id="header">WELCOME</h1>
+
             <h1 id="name">Ng Jia Cheng</h1>
             <h1 id="nric">S9601418Z</h1>
 
+            <pre class="tab"></pre>
+            </p>
+
+            <pre class="tab"></pre>
 
             <div id="container_buttons">
             <a href="NewAppointment" class="a_demo_four">Register New Appointment</a>
             </div>
+
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+            
+            <p class="btnwrap">
+            <a class="button-one" title="Relevant Title" href="#">Upcoming</a><a class="button-two" title="Relevant Title" href="#"> Missed</a><a class="button-three" title="Relevant Title" href="#">  Open </a>
+            </p>
+
+            <pre class="tab"></pre>
+            <pre class="tab"></pre>
+
+            <h2 id="textbelow" >There are no appointment(s)</h2>
 
         </span>  );
     }
