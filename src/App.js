@@ -13,11 +13,14 @@ class app extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      isLoggedIn: true
+
     }
   }
+
+
   render() { 
-    if (this.state.isLoggedIn){
+
+    if (window.location.pathname != '/Login'){
       return ( <div id='content'> 
       {/* Content */}
         <Router>
@@ -88,8 +91,6 @@ class app extends Component {
     </div> );
   }
     
-    
- 
   }
 }
 
