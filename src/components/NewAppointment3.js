@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Button, Col, Row, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 class NewAppointment3 extends Component {
     constructor(props) {
         super(props);

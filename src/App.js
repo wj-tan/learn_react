@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
-import NewAppointment from './components/NewAppointment';
+import NewAppointment1 from './components/NewAppointment1';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
 import NewAppointment2 from './components/NewAppointment2';
@@ -15,12 +15,17 @@ class app extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+      searchtoggled : false,
       isLoggedIn: true
     }
   }
   render() { 
     if (this.state.isLoggedIn){
+
       return ( <div id='content'> 
+      <div id="test" style={this.state.searchtoggled ? {display:"block"}:{display:"none"}}>
+        test
+      </div>
       {/* Content */}
         <Router>
           <Switch>
@@ -30,12 +35,14 @@ class app extends Component {
             <Route exact path={['/MyAppointment']}>
               <MyAppointment/>
             </Route>
-            <Route exact path={['/NewAppointment']}>
-              <NewAppointment/>
+            <Route exact path={['/NewAppointment1']}>
+              <NewAppointment1/>
             </Route>
+
             <Route exact path={['/Search']}>
               <Search/>
             </Route>
+
             <Route exact path={['/MyProfile']}>
               <MyProfile/>
             </Route>
@@ -58,8 +65,8 @@ class app extends Component {
       <div style={{display: 'flex'}}>
         <a href='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></a>
         <a href='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></a>
-        <a href='/NewAppointment'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></a>
-        <a href='/Search'><button variant="primary"><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></a>
+        <a href='/NewAppointment1'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></a>
+        <a href='/Search'><button variant="primary" ><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></a>
         <a href='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></a>
       </div>
     </div> );
@@ -76,8 +83,8 @@ class app extends Component {
             <Route exact path={['/MyAppointment']}>
               <MyAppointment/>
             </Route>
-            <Route exact path={['/NewAppointment']}>
-              <NewAppointment/>
+            <Route exact path={['/NewAppointment1']}>
+              <NewAppointment1/>
             </Route>
             <Route exact path={['/Search']}>
               <Search/>

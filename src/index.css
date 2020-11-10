@@ -146,6 +146,12 @@ h1, h2 {
 #container_buttons{
   text-align: center;
 }
+#qrbtn{
+	text-align: center;
+}
+#branchbtn{
+	text-align: center;
+}
 h3 {
   text-align: center;
 }

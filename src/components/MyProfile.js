@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row'
+import Row from 'react-bootstrap/Row';
 
 class MyProfile extends Component {
     constructor(props) {
