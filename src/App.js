@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
@@ -48,11 +48,11 @@ class app extends Component {
 
 
       <div style={{display: 'flex'}}>
-        <a href='/Home'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></a>
-        <a href='/MyAppointment'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></a>
-        <a href='/NewAppointment'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></a>
-        <a href='/Search'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></a>
-        <a href='/MyProfile'><button variant="primary"><img src="logo192.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></a>
+        <a href='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></a>
+        <a href='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></a>
+        <a href='/NewAppointment'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></a>
+        <a href='/Search'><button variant="primary"><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></a>
+        <a href='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></a>
       </div>
     </div> );
     }
