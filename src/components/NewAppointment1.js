@@ -9,15 +9,17 @@ class NewAppointment extends Component {
     render() { 
         return ( 
             <div>
-                <h1 style="colour:blue;">Make An Appointment</h1>
+                <h1 id="makeappointment">Make An Appointment</h1>
                 <pre class="tab"></pre>
                 <h3>For Pre-Registration</h3>
                 <pre class="tab"></pre>
                 
                 <div id="branchbtn">
-                    <Button size="lg">Select Branch</Button>
+                    <a href="NewAppointment2"><Button size="lg">Select Branch</Button></a>
                 </div>
+                <pre class="tab"></pre>
                 <h3>For Walk-In</h3>
+                <pre class="tab"></pre>
                 <div id="qrbtn">
                     <Button size="lg">Scan QR Code</Button>
                 </div>
