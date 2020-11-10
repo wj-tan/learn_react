@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Form, Button, Col, Row, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
 class NewAppointment2 extends Component {
     constructor(props) {
         super(props);
@@ -8,11 +10,11 @@ class NewAppointment2 extends Component {
         return ( 
             <div>
                 <h1>Branches</h1>
-                <button>Home Team Academy</button>
+                <Button>Home Team Academy</Button>
                 <br></br>
-                <button>Civil Defence Academy</button>
+                <Button>Civil Defence Academy</Button>
                 <br></br>
-                <button>SCDF HQ</button>
+                <Button>SCDF HQ</Button>
             </div>
          );
     }

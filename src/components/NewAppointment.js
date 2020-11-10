@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Button, Col, Row, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 class NewAppointment extends Component {
     constructor(props) {
@@ -10,10 +11,14 @@ class NewAppointment extends Component {
             <div>
                 <h1>Make An Appointment</h1>
                 <h3>For Pre-Registration</h3>
-                <button>Select Branch</button>
+                <div id="selectbranchbtn">
+                    <Button>Select Branch</Button>
+                </div>
                 <h1>Or</h1>
                 <h3>For Walk-In</h3>
-                <button>Scan QR Code</button>
+                <div id="scanqrbtn">
+                    <Button>Scan QR Code</Button>
+                </div>
             </div>
          );
     }
