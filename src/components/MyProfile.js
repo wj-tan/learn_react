@@ -7,7 +7,12 @@ import Row from 'react-bootstrap/Row';
 class MyProfile extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = { 
+            address : this.props.profile.address,
+            postal : this.props.profile.postal,
+            unit : this.props.profile.unit,
+            contact :  this.props.profile.contact
+        }
     }
     render() {
         return (<span>
@@ -17,14 +22,14 @@ class MyProfile extends Component {
                 <Col>
                     <Form.Group controlId="formName">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control value="Handsome Boy" disabled/>
+                        <Form.Control value={this.props.profile.name} disabled/>
                     </Form.Group>
                 </Col>
 
                 <Col>
                     <Form.Group controlId="formNRIC">
                         <Form.Label>NRIC</Form.Label>
-                        <Form.Control value="SXXXX928C" disabled/>
+                        <Form.Control value={this.props.profile.nric} disabled/>
                     </Form.Group>
                 </Col>
 
@@ -32,13 +37,13 @@ class MyProfile extends Component {
                     <Col>
                         <Form.Group as={Col} controlId="formCamp">
                             <Form.Label>Camp</Form.Label>
-                            <Form.Control value="SCDF HQ" disabled/>
+                            <Form.Control value={this.props.profile.camp} disabled/>
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group as={Col} controlId="formVocation">
                             <Form.Label>Vocation</Form.Label>
-                            <Form.Control value="EMT" disabled/>
+                            <Form.Control value={this.props.profile.vocation} disabled/>
                         </Form.Group>
                     </Col>
                 </Form.Row>
@@ -46,7 +51,7 @@ class MyProfile extends Component {
                 <Col>
                     <Form.Group controlId="formAddress">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control defaultValue="1234 Main St" />
+                        <Form.Control value ={this.state.address} onChange={(e)=>this.setState({address : e.target.value})} />
                     </Form.Group>
                 </Col>
 
@@ -54,13 +59,13 @@ class MyProfile extends Component {
                     <Col>
                         <Form.Group as={Col} controlId="formPcode">
                             <Form.Label>Postal Code</Form.Label>
-                            <Form.Control maxlength="6" defaultValue="123456" />
+                            <Form.Control maxlength="6" value ={this.state.postal} onChange={(e)=>this.setState({postal : e.target.value})} />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group as={Col} controlId="formUnitNo">
                             <Form.Label>Unit-No</Form.Label>
-                            <Form.Control maxlength="7" defaultValue="05-716" />
+                            <Form.Control maxlength="7" value ={this.state.unit} onChange={(e)=>this.setState({unit : e.target.value})} />
                         </Form.Group>
                     </Col>
                 </Form.Row>
@@ -68,16 +73,13 @@ class MyProfile extends Component {
                 <Col>
                     <Form.Group controlId="formContact">
                         <Form.Label>Contact No</Form.Label>
-                        <Form.Control maxlength="8" defaultValue="91248543"/>
+                        <Form.Control maxlength="8" value ={this.state.contact} onChange={(e)=>this.setState({contact : e.target.value})}/>
                     </Form.Group>
                 </Col>
-          
-                <Col>
-                    <Button variant="primary" type="submit" block>
-                    <NavLink to="/Home" onClick={() => this.props.handleclick(123)}>Submit</NavLink>
-                    </Button>
-                </Col>
 
+                <Col>
+                    <NavLink to="/Home" onClick={() => this.props.handleclick(this.state.address,this.state.postal,this.state.unit,this.state.contact)}><Button variant="primary" type="submit" block>Save</Button></NavLink>
+                </Col>
             </Form>
         </span>);
     }

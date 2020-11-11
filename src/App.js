@@ -9,7 +9,6 @@ import NewAppointment3 from './components/NewAppointment3';
 import NewAppointment4 from './components/NewAppointment4';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
-import Register from './components/Register';
 import Login from './components/Login';
 
 class app extends Component {
@@ -18,22 +17,30 @@ class app extends Component {
     this.handleclick = this.handleclick.bind(this);
     this.state = {
       //Create profile state here 
-      number: 0,
-      
-
+      profile : {
+        name : '123',
+        nric : 'S9845926C',
+        camp : 'SCDF HQ',
+        vocation : 'EMT',
+        address : '123 Main St',
+        postal : '123465',
+        unit : '05-716',
+        contact : '95623584'
+      }
     }
   }
 
-  handleclick(input) {
-    this.setState({ number: input })
-
-    // 
+  handleclick(input1, input2, input3, input4) {
+    this.setState(prevState => ({
+      profile: {
+        ...prevState.profile,
+        address: input1,
+        postal: input2,
+        unit : input3,
+        contact: input4
+      }
+    }))
   }
-
-  // handleArray(input) {
-  //   this.setState({ profiles: [...this.state.profiles,input] })
-  // }
-
 
   render() {
 
@@ -43,13 +50,13 @@ class app extends Component {
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home number={this.state.number} />
+              <Home profile = {this.state.profile} />
             </Route>
             <Route exact path={['/MyAppointment']}>
               <MyAppointment />
             </Route>
             <Route exact path={['/NewAppointment1']}>
-              <NewAppointment />
+              <NewAppointment profile = {this.state.profile}/>
             </Route>
             <Route exact path={['/NewAppointment2']}>
               <NewAppointment2 />
@@ -64,16 +71,19 @@ class app extends Component {
               <Search />
             </Route>
             <Route exact path={['/MyProfile']}>
-              <MyProfile handleclick={this.handleclick} /> 
-            </Route>
-            <Route exact path={['/Register']}>
-              <Register />
+              <MyProfile profile = {this.state.profile} handleclick={this.handleclick} /> 
             </Route>
             <Route exact path={['/Login']}>
               <Login />
             </Route>
           </Switch>
 
+          {/* <span>
+          {
+            this.state.number
+          }
+        </span>
+         */}
           <div style={{ display: 'flex' }}>
             <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
             <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>
@@ -82,9 +92,6 @@ class app extends Component {
             <NavLink to='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></NavLink>
           </div>
         </Router>
-
-       
-
       </div>);
     }
 
@@ -107,9 +114,6 @@ class app extends Component {
             </Route>
             <Route exact path={['/MyProfile']}>
               <MyProfile />
-            </Route>
-            <Route exact path={['/Register']}>
-              <Register />
             </Route>
             <Route exact path={['/Login']}>
               <Login />
