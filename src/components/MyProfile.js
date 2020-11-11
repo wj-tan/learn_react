@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -75,7 +76,7 @@ class MyProfile extends Component {
                     <Button variant="primary" type="submit" block>
                         Save
                     </Button>
-                    <Button onClick={() => this.props.handleclick(123)}>Submit</Button>
+                    <NavLink to="/Home" onClick={() => this.props.handleclick(123)}>Submit</NavLink>
                 </Col>
 
             </Form>
