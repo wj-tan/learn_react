@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-do
 import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
 import NewAppointment from './components/NewAppointment1';
+import NewAppointment2 from './components/NewAppointment2';
+import NewAppointment3 from './components/NewAppointment3';
+import NewAppointment4 from './components/NewAppointment4';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
 import Register from './components/Register';
@@ -48,6 +51,15 @@ class app extends Component {
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment />
             </Route>
+            <Route exact path={['/NewAppointment2']}>
+              <NewAppointment2 />
+            </Route>
+            <Route exact path={['/NewAppointment3']}>
+              <NewAppointment3 />
+            </Route>
+            <Route exact path={['/NewAppointment4']}>
+              <NewAppointment4 />
+            </Route>
             <Route exact path={['/Search']}>
               <Search />
             </Route>
@@ -62,11 +74,6 @@ class app extends Component {
             </Route>
           </Switch>
 
-          <span>
-          {
-            this.state.number
-          }
-        </span>
           <div style={{ display: 'flex' }}>
             <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
             <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>

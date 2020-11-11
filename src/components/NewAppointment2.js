@@ -10,14 +10,21 @@ class NewAppointment2 extends Component {
     }
     render() { 
         return ( 
-            <div>
+            <span>
                 <h1>Branches</h1>
-                <Button>Home Team Academy</Button>
-                <br></br>
-                <Button>Civil Defence Academy</Button>
-                <br></br>
-                <Button>SCDF HQ</Button>
-            </div>
+                <pre class="tab"></pre>
+                <pre class="tab"></pre>
+                <pre class="tab"></pre>
+                <div id="branchesbtn">
+                    <a href="NewAppointment3"><Button id = "htabtn" size="lg">Home Team Academy</Button></a>
+                    <pre class="tab"></pre>
+                    <pre class="tab"></pre>
+                    <Button id= "cdabtn" size="lg">Civil Defence Academy</Button>
+                    <pre class="tab"></pre>
+                    <pre class="tab"></pre>
+                    <Button id="scdfhqbtn" size="lg">SCDF HQ</Button>
+                </div>
+            </span>
          );
     }
 }

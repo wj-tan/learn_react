@@ -74,9 +74,8 @@ class MyProfile extends Component {
           
                 <Col>
                     <Button variant="primary" type="submit" block>
-                        Save
-                    </Button>
                     <NavLink to="/Home" onClick={() => this.props.handleclick(123)}>Submit</NavLink>
+                    </Button>
                 </Col>
 
             </Form>

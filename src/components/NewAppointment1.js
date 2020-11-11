@@ -18,6 +18,7 @@ class NewAppointment extends Component {
                     <a href="NewAppointment2"><Button size="lg">Select Branch</Button></a>
                 </div>
                 <pre class="tab"></pre>
+                <pre class="tab"></pre>
                 <h3>For Walk-In</h3>
                 <pre class="tab"></pre>
                 <div id="qrbtn">
