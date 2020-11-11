@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
@@ -12,85 +12,106 @@ import Login from './components/Login';
 class app extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.handleclick = this.handleclick.bind(this);
+    this.state = {
+      //Create profile state here 
+      number: 0,
+      
 
     }
   }
 
+  handleclick(input) {
+    this.setState({ number: input })
 
-  render() { 
+    // 
+  }
 
-    if (window.location.pathname != '/Login'){
-      return ( <div id='content'> 
-      {/* Content */}
+  // handleArray(input) {
+  //   this.setState({ profiles: [...this.state.profiles,input] })
+  // }
+
+
+  render() {
+
+    if (window.location.pathname != '/Login') {
+      return (<div id='content'>
+        {/* Content */}
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home/>
+              <Home number={this.state.number} />
             </Route>
             <Route exact path={['/MyAppointment']}>
-              <MyAppointment/>
+              <MyAppointment />
             </Route>
             <Route exact path={['/NewAppointment1']}>
-              <NewAppointment/>
+              <NewAppointment />
             </Route>
             <Route exact path={['/Search']}>
-              <Search/>
+              <Search />
             </Route>
             <Route exact path={['/MyProfile']}>
-              <MyProfile/>
+              <MyProfile handleclick={this.handleclick} /> 
             </Route>
             <Route exact path={['/Register']}>
-              <Register/>
+              <Register />
             </Route>
             <Route exact path={['/Login']}>
-              <Login/>
+              <Login />
             </Route>
           </Switch>
+
+          <span>
+          {
+            this.state.number
+          }
+        </span>
+          <div style={{ display: 'flex' }}>
+            <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
+            <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>
+            <NavLink to='/NewAppointment1'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></NavLink>
+            <NavLink to='/Search'><button variant="primary"><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></NavLink>
+            <NavLink to='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></NavLink>
+          </div>
         </Router>
 
+       
 
-      <div style={{display: 'flex'}}>
-        <a href='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></a>
-        <a href='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></a>
-        <a href='/NewAppointment1'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></a>
-        <a href='/Search'><button variant="primary"><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></a>
-        <a href='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></a>
-      </div>
-    </div> );
+      </div>);
     }
 
-    else{
-      return ( <div id='content'> 
-      {/* Content */}
+    else {
+      return (<div id='content'>
+        {/* Content */}
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home/>
+              <Home />
             </Route>
             <Route exact path={['/MyAppointment']}>
-              <MyAppointment/>
+              <MyAppointment />
             </Route>
             <Route exact path={['/NewAppointment1']}>
-              <NewAppointment/>
+              <NewAppointment />
             </Route>
             <Route exact path={['/Search']}>
-              <Search/>
+              <Search />
             </Route>
             <Route exact path={['/MyProfile']}>
-              <MyProfile/>
+              <MyProfile />
             </Route>
             <Route exact path={['/Register']}>
-              <Register/>
+              <Register />
             </Route>
             <Route exact path={['/Login']}>
-              <Login/>
+              <Login />
             </Route>
           </Switch>
         </Router>
-    </div> );
-  }
-    
+      </div>);
+    }
+
   }
 }
 

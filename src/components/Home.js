@@ -19,6 +19,7 @@ class Home extends Component {
 
             <h1 id="name">Ng Jia Cheng</h1>
             <h1 id="nric">S9601418Z</h1>
+        <h1 id="number">{this.props.number}</h1>
 
             <pre class="tab"></pre>
             </p>

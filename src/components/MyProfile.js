@@ -75,7 +75,9 @@ class MyProfile extends Component {
                     <Button variant="primary" type="submit" block>
                         Save
                     </Button>
+                    <Button onClick={() => this.props.handleclick(123)}>Submit</Button>
                 </Col>
+
             </Form>
         </span>);
     }

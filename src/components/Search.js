@@ -5,6 +5,7 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = { selectedArea: "" }
+        
     }
     render() {
         return (<span>
