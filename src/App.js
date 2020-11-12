@@ -32,13 +32,13 @@ class app extends Component {
         unit : '05-716',
         contact : '95623584'
       },
-<<<<<<< HEAD
 
       branches : {
         branch1 : 'Home Team Academy',
         branch2 : 'Civil Defence Academy',
         branch3 : 'SCDF HQ'
-=======
+      },
+      
       //Create appointment list state
       appointments : [],
       appointment : {
@@ -46,7 +46,6 @@ class app extends Component {
         purpose : '',
         date : '',
         time : ''
->>>>>>> a3d11fc5c126e64461146a6163d35f8f40c1b03e
       }
     }
   }
