@@ -16,7 +16,12 @@ class app extends Component {
     super(props);
     this.handleclick = this.handleclick.bind(this);
     this.state = {
-      //Create profile state here 
+      //Create user
+      user : {
+        username : 'Tan Ah Beng',
+        password : '1234'
+      },
+      //Create profile state 
       profile : {
         name : 'Tan Ah Beng',
         nric : 'S9845926C',
@@ -26,6 +31,14 @@ class app extends Component {
         postal : '123465',
         unit : '05-716',
         contact : '95623584'
+      },
+      //Create appointment list state
+      appointments : [],
+      appointment : {
+        branch : '',
+        purpose : '',
+        date : '',
+        time : ''
       }
     }
   }
@@ -50,7 +63,7 @@ class app extends Component {
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home profile = {this.state.profile} />
+              <Home profile = {this.state.profile}  />
             </Route>
             <Route exact path={['/MyAppointment']}>
               <MyAppointment />
@@ -62,7 +75,7 @@ class app extends Component {
               <NewAppointment2 />
             </Route>
             <Route exact path={['/NewAppointment3']}>
-              <NewAppointment3 />
+              <NewAppointment3 appointment = {this.state.appointment}/>
             </Route>
             <Route exact path={['/NewAppointment4']}>
               <NewAppointment4 />
@@ -74,16 +87,10 @@ class app extends Component {
               <MyProfile profile = {this.state.profile} handleclick={this.handleclick} /> 
             </Route>
             <Route exact path={['/Login']}>
-              <Login />
+              <Login user = {this.state.user} />
             </Route>
           </Switch>
 
-          {/* <span>
-          {
-            this.state.number
-          }
-        </span>
-         */}
           <div style={{ display: 'flex' }}>
             <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
             <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>
@@ -101,7 +108,7 @@ class app extends Component {
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home />
+              <Home profile = {this.state.profile}/>
             </Route>
             <Route exact path={['/MyAppointment']}>
               <MyAppointment />
@@ -109,14 +116,23 @@ class app extends Component {
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment />
             </Route>
+            <Route exact path={['/NewAppointment2']}>
+              <NewAppointment2 />
+            </Route>
+            <Route exact path={['/NewAppointment3']}>
+              <NewAppointment3 appointment = {this.state.appointment}/>
+            </Route>
+            <Route exact path={['/NewAppointment4']}>
+              <NewAppointment4 />
+            </Route>
             <Route exact path={['/Search']}>
               <Search />
             </Route>
             <Route exact path={['/MyProfile']}>
-              <MyProfile />
+              <MyProfile profile = {this.state.profile} handleclick={this.handleclick}/>
             </Route>
             <Route exact path={['/Login']}>
-              <Login />
+              <Login user = {this.state.user}/>
             </Route>
           </Switch>
         </Router>
