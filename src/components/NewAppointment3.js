@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 class NewAppointment3 extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+        }
     }
     render() { 
         return ( 
@@ -18,7 +20,7 @@ class NewAppointment3 extends Component {
                     <Col>
                         <Form.Group controlId="formBranch">
                             <Form.Label>Branch</Form.Label>
-                            <Form.Control value="Home Team Academy" disabled></Form.Control>
+                            <Form.Control value = "Home Team Academy" disabled></Form.Control>
                         </Form.Group>
                     </Col>
                     
@@ -90,9 +92,7 @@ class NewAppointment3 extends Component {
                         </Form.Group>
                     </Col>
                     <Col>
-                    <Button variant="primary" type="submit" block>
-                        Next
-                    </Button>
+                    <NavLink to="/Home" onClick={() => this.props.handleclick()}><Button variant="primary" type="submit" block>Next</Button></NavLink>
                 </Col>
 
                 </Form>
