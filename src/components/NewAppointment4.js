@@ -17,7 +17,7 @@ class NewAppointment3 extends Component {
                 <Form>
                     <Col>
                         <Form.Group controlId="formBranch">
-                            <Form.Label>Branch</Form.Label>
+                            <Form.Label>Branch : </Form.Label>
                             <Form.Control value="Home Team Academy" disabled></Form.Control>
                         </Form.Group>
                     </Col>
@@ -25,10 +25,8 @@ class NewAppointment3 extends Component {
                     <Col>
                         <Form.Group controlId="formPurpose">
                             <Form.Label>Purpose of Visit</Form.Label>
-                            <Form.Control as="select">
-                                <option>Consultation</option>
-                                <option>FFI</option>
-                            </Form.Control>
+                            <Form.Control as="select"></Form.Control>
+                            
                         </Form.Group>
                     </Col>
         
@@ -91,7 +89,7 @@ class NewAppointment3 extends Component {
                     </Col>
                     <Col>
                     <Button variant="primary" type="submit" block>
-                        Next
+                        Conform Booking
                     </Button>
                 </Col>
 

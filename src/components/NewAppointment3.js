@@ -44,46 +44,31 @@ class NewAppointment3 extends Component {
                             <Form.Label>Time</Form.Label><br></br>
                             <Form.Row>
                                 <Col>
-                                    <Form.Check
-                                        inline
-                                        type="checkbox"
-                                        label="10AM"
-                                    />
-                                    <Form.Check
-                                        inline
-                                        type="checkbox"
-                                        label="11AM"
-                                    />
+                                    <input type="radio" name="group1" id="item1" value="radiotime"></input>
+                                    <label id="radiotime" for="item1">10AM</label>
+                        
+                                    <input type="radio" name="group1" id="item2" value="11AM"></input>
+                                    <label id="radiotime" for="item2">11AM</label>
                                 </Col>
                             </Form.Row>
 
                             <Form.Row>
                                 <Col>
-                                    <Form.Check
-                                        inline
-                                        type="checkbox"
-                                        label="2PM"
-                                    />
-                                    <Form.Check
-                                        inline
-                                        type="checkbox"
-                                        label="3PM"
-                                    />
+                                    <input type="radio" name="group1" id="item3" value="2PM"></input>
+                                    <label id="radiotime" for="item3">2PM</label>
+                        
+                                    <input type="radio" name="group1" id="item4" value="3PM"></input>
+                                    <label id="radiotime" for="item4">3PM</label>
                                 </Col>
                             </Form.Row>
 
                             <Form.Row>
                                 <Col>
-                                    <Form.Check
-                                        inline
-                                        type="checkbox"
-                                        label="4PM"
-                                    />
-                                    <Form.Check
-                                        inline
-                                        type="checkbox"
-                                        label="5PM"
-                                    />
+                                    <input type="radio" name="group1" id="item5" value="2PM"></input>
+                                    <label id="radiotime" for="item5">4PM</label>
+                                    
+                                    <input type="radio" name="group1" id="item6" value="3PM"></input>
+                                    <label id="radiotime" for="item6">5PM</label>
                                 </Col>
                             </Form.Row>
 

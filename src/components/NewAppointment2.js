@@ -11,6 +11,7 @@ class NewAppointment2 extends Component {
     render() { 
         return ( 
             <span>
+                <Form>
                 <h1>Branches</h1>
                 <pre class="tab"></pre>
                 <pre class="tab"></pre>
@@ -24,6 +25,7 @@ class NewAppointment2 extends Component {
                     <pre class="tab"></pre>
                     <Button id="scdfhqbtn" size="lg">SCDF HQ</Button>
                 </div>
+                </Form>
             </span>
          );
     }

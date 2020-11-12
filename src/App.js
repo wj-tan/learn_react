@@ -26,6 +26,12 @@ class app extends Component {
         postal : '123465',
         unit : '05-716',
         contact : '95623584'
+      },
+
+      branches : {
+        branch1 : 'Home Team Academy',
+        branch2 : 'Civil Defence Academy',
+        branch3 : 'SCDF HQ'
       }
     }
   }
