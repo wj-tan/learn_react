@@ -18,7 +18,7 @@ class app extends Component {
     this.state = {
       //Create profile state here 
       profile : {
-        name : '123',
+        name : 'Tan Ah Beng',
         nric : 'S9845926C',
         camp : 'SCDF HQ',
         vocation : 'EMT',
