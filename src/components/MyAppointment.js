@@ -12,10 +12,6 @@ class MyAppointment extends Component {
         var year = new Date().getFullYear(); //To get the Current Year
         var hours = new Date().getHours(); //To get the Current Hours
         var min = new Date().getMinutes(); //To get the Current Minutes
-        // var obDate = new Date.parse((month+date+year));
-        // var obDate = new Date(year+"-"+month+"-"+date);
-        var myDate = new Date(year + "-" + month + "-" + date);
-        var date2 = new Date().getDate() + 1;
 
         this.state = {
             selectedMode: "",
