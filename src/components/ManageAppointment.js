@@ -22,28 +22,28 @@ class ManageAppointment extends Component {
                     <Col>
                         <Form.Group controlId="formBranch">
                             <Form.Label>Branch : </Form.Label>
-                            <Form.Control value={this.props.appointments[this.props.selectedAppointment].branch}disabled></Form.Control>
+                            <Form.Control value={this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.branch)}disabled></Form.Control>
                         </Form.Group>
                     </Col>
                     
                     <Col>
                         <Form.Group controlId="formPurpose">
                             <Form.Label>Purpose : </Form.Label>
-                            <Form.Control value={this.props.appointments[this.props.selectedAppointment].purpose}disabled></Form.Control>
+                            <Form.Control value={this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.purpose)}disabled></Form.Control>
                         </Form.Group>
                     </Col>
         
                     <Col>
                         <Form.Group controlId="formDate">
                             <Form.Label>Date : </Form.Label>
-                            <Form.Control value={this.props.appointments[this.props.selectedAppointment].date}disabled></Form.Control>
+                            <Form.Control value={this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.date)}disabled></Form.Control>
                         </Form.Group>
                     </Col>
                     
                     <Col>
                         <Form.Group controlId="formTime">
                             <Form.Label>Time : </Form.Label>
-                            <Form.Control value={this.props.appointments[this.props.selectedAppointment].time}disabled></Form.Control>
+                            <Form.Control value={this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.time)}disabled></Form.Control>
                         </Form.Group>
                     </Col>
                 </Form>
