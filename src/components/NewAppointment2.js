@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 
 class NewAppointment2 extends Component {
     constructor(props) {
@@ -15,13 +16,13 @@ class NewAppointment2 extends Component {
                 <pre class="tab"></pre>
                 <pre class="tab"></pre>
                 <div id="branchesbtn">
-                    <a href="/NewAppointment3"><Button id = "htabtn" size="lg">Home Team Academy</Button></a>
+                    <NavLink to="/NewAppointment3_1"><Button id = "htabtn" size="lg">Home Team Academy</Button></NavLink>
                     <pre class="tab"></pre>
                     <pre class="tab"></pre>
-                    <Button id= "cdabtn" size="lg">Civil Defence Academy</Button>
+                    <NavLink to="/NewAppointment3_2"><Button id = "cda" size="lg">Civil Defence Academy</Button></NavLink>
                     <pre class="tab"></pre>
                     <pre class="tab"></pre>
-                    <Button id="scdfhqbtn" size="lg">SCDF HQ</Button>
+                    <NavLink to="/NewAppointment3_3"><Button id = "scdfhq" size="lg">SCDF HQ</Button></NavLink>
                 </div>
                 </Form>
             </span>
