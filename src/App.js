@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
+import MyQueue from './components/MyQueue';
 import MyAppointment from './components/MyAppointment';
 import ManageAppointment from './components/ManageAppointment'
 import NewAppointment from './components/NewAppointment1';
@@ -113,6 +114,9 @@ class app extends Component {
           <Switch>
             <Route exact path={['/Home']}>
               <Home profile = {this.state.profile} appointments = {this.state.appointments} />
+            </Route>
+            <Route exact path={['/MyQueue']}>
+              <MyQueue />
             </Route>
             <Route exact path={['/MyAppointment']}>
               <MyAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect}/>
