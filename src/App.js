@@ -82,10 +82,10 @@ class app extends Component {
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home profile = {this.state.profile}  />
+              <Home profile = {this.state.profile} appointments = {this.state.appointments} />
             </Route>
             <Route exact path={['/MyAppointment']}>
-              <MyAppointment />
+              <MyAppointment appointments = {this.state.appointments}/>
             </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>
@@ -136,10 +136,10 @@ class app extends Component {
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home profile = {this.state.profile}  />
+              <Home profile = {this.state.profile} appointments = {this.state.appointments} />
             </Route>
             <Route exact path={['/MyAppointment']}>
-              <MyAppointment />
+              <MyAppointment appointments = {this.state.appointments}/>
             </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>
