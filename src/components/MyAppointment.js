@@ -19,7 +19,8 @@ class MyAppointment extends Component {
 
         this.state = {
             selectedMode: "",
-            currentTime: (year + "-" + month + "-" + date).toString()
+            currentTime: (year + "-" + month + "-" + date),
+            test : ''
         }
     }
 
@@ -44,9 +45,6 @@ class MyAppointment extends Component {
                 </Row>
             </div>
             <div id = 'center'>
-                        <br></br>
-                        <br></br>
-                        <br></br>
                         {(() => {
                     switch (this.state.selectedMode) {
                         case 'Upcoming':
@@ -69,7 +67,7 @@ class MyAppointment extends Component {
                                                 <td>{appointment.branch}</td>
                                                 <td>{appointment.date}</td>
                                                 <td>{appointment.time}</td>
-                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(index)}>Manage</Button></NavLink></td>
+                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(appointment.id)}>Manage</Button></NavLink></td>
                                             </tr>
                                         )
                                     })}
@@ -93,12 +91,12 @@ class MyAppointment extends Component {
 
                                     {(this.props.appointments) && this.props.appointments.filter(appointment => (appointment.date < this.state.currentTime)).map((appointment, index) => {
                                         return (
-                                            <tr>
+                                            <tr>    
                                                 <td>{index + 1}</td>
                                                 <td>{appointment.branch}</td>
                                                 <td>{appointment.date}</td>
                                                 <td>{appointment.time}</td>
-                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(index)}>Manage</Button></NavLink></td>
+                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(appointment.id)}>Manage</Button></NavLink></td>
                                             </tr>
                                         )
                                     })}
@@ -118,7 +116,6 @@ class MyAppointment extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     {(this.props.appointments) && this.props.appointments.map((appointment,index)=>{
                                         return (
                                             <tr>
@@ -126,7 +123,7 @@ class MyAppointment extends Component {
                                                 <td>{appointment.branch}</td>
                                                 <td>{appointment.date}</td>
                                                 <td>{appointment.time}</td>
-                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(index)}>Manage</Button></NavLink></td>
+                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(appointment.id)}>Manage</Button></NavLink></td>
                                             </tr>
                                         )
                                     })} 
@@ -153,7 +150,7 @@ class MyAppointment extends Component {
                                                 <td>{appointment.branch}</td>
                                                 <td>{appointment.date}</td>
                                                 <td>{appointment.time}</td>
-                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(index)}>Manage</Button></NavLink></td>
+                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(appointment.id)}>Manage</Button></NavLink></td>
                                             </tr>
                                         )
                                     })}
