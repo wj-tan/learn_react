@@ -14,7 +14,16 @@ class MyQueue extends Component {
         }
     }
     render() {
-        return '';
+        return (
+            
+            <span>
+                {/* Conditional Rendering
+                if 15 minutes */}
+                <NavLink to='/MyProfile'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
+                {/* if > 15 minutes */}
+                <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
+            </span>
+        );
     }
 }
 
