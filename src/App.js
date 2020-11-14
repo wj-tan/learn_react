@@ -49,7 +49,8 @@ class app extends Component {
       //Create appointment list state
       appointments : [],
       tempAppointment : [],
-      tempEdit : []
+      tempEdit : [],
+      count : 1
     }
   }
 
@@ -60,7 +61,7 @@ class app extends Component {
   //Cancel Appointment
   handleCancelAppointment(index){
     if (window.confirm("Confirm")) {
-      this.state.appointments.splice(index,1);
+      this.state.appointments.splice(this.state.appointments.findIndex(e => e.id === index),1);
       alert("Appointment has been cancelled");
     } else {
       alert("Appointment cancel unsucessful");
@@ -78,15 +79,19 @@ class app extends Component {
       }
     }))
   }
-
+  additional(count){
+    this.setState({
+      count : count + 1
+    })
+  }
   handleAddAppointment(appObj){
+    this.additional(this.state.count)
+    appObj.id = this.state.count
     var newArray = this.state.appointments.concat(appObj)
     this.setState({
         appointments: newArray
     })
   }
-
- 
 
   handleAppointment(appointmentObj) {
     this.setState({
