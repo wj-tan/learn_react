@@ -49,10 +49,10 @@ class ManageAppointment extends Component {
                 <div id="branch">
                     <Row>
                         <Col>
-                            <Button variant="primary" size="lg" >Cancel</Button>
+                            <Button size="lg" >Cancel</Button>
                         </Col>
                         <Col>
-                            <Button variant="primary" size="lg" >Reschedule</Button>
+                            <Button size="lg" >Reschedule</Button>
                         </Col>
                     </Row>
                 </div>
