@@ -4,7 +4,9 @@ import { Button, Row, Col } from "react-bootstrap";
 class Search extends Component {
     constructor(props) {
         super(props);
-        this.state = { selectedArea: "" }
+        this.state = { 
+            selectedArea: ""
+        }
         
     }
     render() {

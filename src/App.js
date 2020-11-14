@@ -48,7 +48,7 @@ class app extends Component {
       //Create appointment list state
       appointments : [],
       tempAppointment : [],
-      selectedAppointment : 0
+      tempEdit : []
     }
   }
 
@@ -81,6 +81,11 @@ class app extends Component {
     })
   }
  
+  handleEditAppointment(appObj){
+    this.setState({
+        tempEdit : appObj
+    })
+  }
   render() {
 
     if (window.location.pathname != '/Login') {
