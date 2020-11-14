@@ -47,7 +47,8 @@ class MyAppointment extends Component {
                                                 <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(index)}>Manage</Button></NavLink></td>
                                             </tr>
                                         )
-                                    })} 
+                                    })}
+                                     
                                 </tbody>
                             </Table> 
             </div>
