@@ -3,7 +3,6 @@ import { Form, Button, FormGroup, FormControl, ControlLabel, Table, ToastBody } 
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import moment from "moment";
 
 //created by typing cc enter
 class Home extends Component {
