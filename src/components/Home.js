@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
-import { Button, Row, Col } from "react-bootstrap";
+import { Form, Button, FormGroup, FormControl, ControlLabel, Table, ToastBody } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 //created by typing cc enter
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { selectedMode: "" }
+
+        var date = new Date().getDate(); //To get the Current Date
+        var month = new Date().getMonth() + 1; //To get the Current Month
+        var year = new Date().getFullYear(); //To get the Current Year
+        var hours = new Date().getHours(); //To get the Current Hours
+        var min = new Date().getMinutes(); //To get the Current Minutes
+
+        this.state = { selectedMode: "", currentTime: (year+"-"+month+"-"+date) }
     }
     render() {
         return (<span>
@@ -35,9 +45,9 @@ class Home extends Component {
             <pre class="tab"></pre>
             <pre class="tab"></pre>
 
-            <p class="btnwrap">
+            {/* <p class="btnwrap">
                 <a class="button-one" title="Relevant Title" href="#">Upcoming</a><a class="button-two" title="Relevant Title" href="#"> Missed</a><a class="button-three" title="Relevant Title" href="#">  Open </a>
-            </p>
+            </p> */}
 
             <div id="mode">
                 <Row>
@@ -53,27 +63,99 @@ class Home extends Component {
                 </Row>
             </div>
             <div id="map">
+                {
+                    (this.props.appointments)&&console.log(
+                        this.props.appointments.filter(appointment=>appointment.purpose == 'FFI')
+   
+                    )
+                    
+                }
                 {(() => {
                     switch (this.state.selectedMode) {
                         case 'Upcoming':
-                            return (<table>
-                                <tr>
-                                    <th>Branch</th>
-                                    <th>Purpose</th>
-                                    <th>Date</th>
-                                    <th>Timeslot</th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </table>);
+                            return (<Table>
+                                <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Branch</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {(this.props.appointments) && this.props.appointments.filter(appointment=>appointment.purpose == 'FFI').map((appointment,index)=>{
+                                        return (
+                                            <tr>
+                                                <td>{index + 1}</td>
+                                                <td>{appointment.branch}</td>
+                                                <td>{appointment.date}</td>
+                                                <td>{appointment.time}</td>
+                                                <td>{appointment.purpose}</td>
+                                            </tr>
+                                        )
+                                    })}
+                                    
+                                </tbody>
+                                
+                            </Table> );
                         case 'Missed':
-                            return <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15954.734017007959!2d103.692123!3d1.366577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3bce0543e6ef24ca!2sCivil%20Defence%20Academy!5e0!3m2!1sen!2ssg!4v1605013322806!5m2!1sen!2ssg" width="400" height="400" frameborder="0" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>;
+                            return (<Table>
+                                <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Branch</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {(this.props.appointments) && this.props.appointments.map((appointment,index)=>{
+                                        return (
+                                            <tr>
+                                                <td>{index + 1}</td>
+                                                <td>{appointment.branch}</td>
+                                                <td>{appointment.date}</td>
+                                                <td>{appointment.time}</td>
+                                                <td>{appointment.purpose}</td>
+                                            </tr>
+                                        )
+                                    })}
+                                    
+                                </tbody>
+                                
+                            </Table> );
                         case 'Open':
-                            return <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15954.946075529848!2d103.893113!3d1.3342729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x53122296532862ec!2sSCDF%20HQ!5e0!3m2!1sen!2ssg!4v1605013349417!5m2!1sen!2ssg" width="400" height="400" frameborder="0" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>;
+                            return (<Table>
+                                <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Branch</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {(this.props.appointments) && this.props.appointments.map((appointment,index)=>{
+                                        return (
+                                            <tr>
+                                                <td>{index + 1}</td>
+                                                <td>{appointment.branch}</td>
+                                                <td>{appointment.date}</td>
+                                                <td>{appointment.time}</td>
+                                                <td>{appointment.purpose}</td>
+                                            </tr>
+                                        )
+                                    })}
+                                    
+                                </tbody>
+                                
+                            </Table> );
                         default:
                             return '';
                     }
