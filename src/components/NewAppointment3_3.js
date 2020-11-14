@@ -8,6 +8,7 @@ class NewAppointment3_3 extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            id : '',
             branch : 'SCDF HQ',
             purpose : 'Consultation',
             date : '',
