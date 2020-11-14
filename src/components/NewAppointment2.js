@@ -11,6 +11,8 @@ class NewAppointment2 extends Component {
         return ( 
             <span>
                 <Form>
+                <br></br>
+                <br></br>
                 <h1>Branches</h1>
                 <pre class="tab"></pre>
                 <pre class="tab"></pre>
@@ -19,10 +21,10 @@ class NewAppointment2 extends Component {
                     <NavLink to="/NewAppointment3_1"><Button id = "htabtn" size="lg">Home Team Academy</Button></NavLink>
                     <pre class="tab"></pre>
                     <pre class="tab"></pre>
-                    <NavLink to="/NewAppointment3_2"><Button id = "cda" size="lg">Civil Defence Academy</Button></NavLink>
+                    <NavLink to="/NewAppointment3_2"><Button id = "cdabtn" size="lg">Civil Defence Academy</Button></NavLink>
                     <pre class="tab"></pre>
                     <pre class="tab"></pre>
-                    <NavLink to="/NewAppointment3_3"><Button id = "scdfhq" size="lg">SCDF HQ</Button></NavLink>
+                    <NavLink to="/NewAppointment3_3"><Button id = "scdfhqbtn" size="lg">SCDF HQ</Button></NavLink>
                 </div>
                 </Form>
             </span>
