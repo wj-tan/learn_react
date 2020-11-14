@@ -156,6 +156,9 @@ class app extends Component {
             <Route exact path={['/MyAppointment']}>
               <MyAppointment appointments = {this.state.appointments}/>
             </Route>
+            <Route exact path={['/ManageAppointment']}>
+              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment}/>
+            </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>
             </Route>
