@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Col, Row, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 
 class NewAppointment extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class NewAppointment extends Component {
                 <pre class="tab"></pre>
                 
                 <div id="branchbtn">
-                    <a href="NewAppointment2"><Button size="lg">Select Branch</Button></a>
+                    <NavLink to="NewAppointment2"><Button size="lg">Select Branch</Button></NavLink>
                 </div>
                 <pre class="tab"></pre>
                 <pre class="tab"></pre>
