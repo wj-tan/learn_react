@@ -5,7 +5,9 @@ import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
 import NewAppointment from './components/NewAppointment1';
 import NewAppointment2 from './components/NewAppointment2';
-import NewAppointment3 from './components/NewAppointment3';
+import NewAppointment3_1 from './components/NewAppointment3_1';
+import NewAppointment3_2 from './components/NewAppointment3_2';
+import NewAppointment3_3 from './components/NewAppointment3_3';
 import NewAppointment4 from './components/NewAppointment4';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
@@ -15,6 +17,8 @@ class app extends Component {
   constructor(props) {
     super(props);
     this.handleclick = this.handleclick.bind(this);
+    this.handleAppointment = this.handleAppointment.bind(this);
+    this.handleAddAppointment = this.handleAddAppointment.bind(this);
     this.state = {
       //Create user
       user : {
@@ -41,12 +45,7 @@ class app extends Component {
       
       //Create appointment list state
       appointments : [],
-      appointment : {
-        branch : '',
-        purpose : '',
-        date : '',
-        time : ''
-      }
+      tempAppointment : []
     }
   }
 
@@ -62,6 +61,19 @@ class app extends Component {
     }))
   }
 
+  handleAddAppointment(appObj){
+    var newArray = this.state.appointments.concat(appObj)
+    this.setState({
+        appointments: newArray
+    })
+  }
+
+  handleAppointment(appointmentObj) {
+    this.setState({
+      tempAppointment: appointmentObj
+    })
+  }
+ 
   render() {
 
     if (window.location.pathname != '/Login') {
@@ -81,11 +93,17 @@ class app extends Component {
             <Route exact path={['/NewAppointment2']}>
               <NewAppointment2 />
             </Route>
-            <Route exact path={['/NewAppointment3']}>
-              <NewAppointment3 appointment = {this.state.appointment}/>
+            <Route exact path={['/NewAppointment3_1']}>
+              <NewAppointment3_1 handleAppointment={this.handleAppointment} />
+            </Route>
+            <Route exact path={['/NewAppointment3_2']}>
+              <NewAppointment3_2 handleAppointment={this.handleAppointment} />
+            </Route>
+            <Route exact path={['/NewAppointment3_3']}>
+              <NewAppointment3_3 handleAppointment={this.handleAppointment} />
             </Route>
             <Route exact path={['/NewAppointment4']}>
-              <NewAppointment4 />
+              <NewAppointment4 tempAppointment = {this.state.tempAppointment} handleAddAppointment={this.handleAddAppointment}/>
             </Route>
             <Route exact path={['/Search']}>
               <Search />
@@ -97,7 +115,10 @@ class app extends Component {
               <Login user = {this.state.user} />
             </Route>
           </Switch>
-
+          <span>
+              {console.log(this.state.tempAppointment)}
+              {console.log(this.state.appointments)}
+          </span>
           <div style={{ display: 'flex' }}>
             <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
             <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>
@@ -115,31 +136,37 @@ class app extends Component {
         <Router>
           <Switch>
             <Route exact path={['/Home']}>
-              <Home profile = {this.state.profile}/>
+              <Home profile = {this.state.profile}  />
             </Route>
             <Route exact path={['/MyAppointment']}>
               <MyAppointment />
             </Route>
             <Route exact path={['/NewAppointment1']}>
-              <NewAppointment />
+              <NewAppointment profile = {this.state.profile}/>
             </Route>
             <Route exact path={['/NewAppointment2']}>
               <NewAppointment2 />
             </Route>
-            <Route exact path={['/NewAppointment3']}>
-              <NewAppointment3 appointment = {this.state.appointment}/>
+            <Route exact path={['/NewAppointment3_1']}>
+              <NewAppointment3_1 handleAppointment={this.handleAppointment} />
+            </Route>
+            <Route exact path={['/NewAppointment3_2']}>
+              <NewAppointment3_2 handleAppointment={this.handleAppointment} />
+            </Route>
+            <Route exact path={['/NewAppointment3_3']}>
+              <NewAppointment3_3 handleAppointment={this.handleAppointment} />
             </Route>
             <Route exact path={['/NewAppointment4']}>
-              <NewAppointment4 />
+              <NewAppointment4 tempAppointment = {this.state.tempAppointment} handleAddAppointment={this.handleAddAppointment}/>
             </Route>
             <Route exact path={['/Search']}>
               <Search />
             </Route>
             <Route exact path={['/MyProfile']}>
-              <MyProfile profile = {this.state.profile} handleclick={this.handleclick}/>
+              <MyProfile profile = {this.state.profile} handleclick={this.handleclick} /> 
             </Route>
             <Route exact path={['/Login']}>
-              <Login user = {this.state.user}/>
+              <Login user = {this.state.user} />
             </Route>
           </Switch>
         </Router>
