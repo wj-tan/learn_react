@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-do
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyAppointment from './components/MyAppointment';
+import ManageAppointment from './components/ManageAppointment'
 import NewAppointment from './components/NewAppointment1';
 import NewAppointment2 from './components/NewAppointment2';
 import NewAppointment3_1 from './components/NewAppointment3_1';
@@ -19,6 +20,7 @@ class app extends Component {
     this.handleclick = this.handleclick.bind(this);
     this.handleAppointment = this.handleAppointment.bind(this);
     this.handleAddAppointment = this.handleAddAppointment.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
     this.state = {
       //Create user
       user : {
@@ -45,8 +47,13 @@ class app extends Component {
       
       //Create appointment list state
       appointments : [],
-      tempAppointment : []
+      tempAppointment : [],
+      selectedAppointment : 0
     }
+  }
+
+  handleSelect(index) {
+    this.setState({selectedAppointment : index})
   }
 
   handleclick(input1, input2, input3, input4) {
@@ -85,7 +92,10 @@ class app extends Component {
               <Home profile = {this.state.profile} appointments = {this.state.appointments} />
             </Route>
             <Route exact path={['/MyAppointment']}>
-              <MyAppointment appointments = {this.state.appointments}/>
+              <MyAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect}/>
+            </Route>
+            <Route exact path={['/ManageAppointment']}>
+              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment}/>
             </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>

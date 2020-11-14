@@ -11,6 +11,8 @@ class MyAppointment extends Component {
 
         }
     }
+
+
     render() { 
         return ( 
         
@@ -42,13 +44,11 @@ class MyAppointment extends Component {
                                                 <td>{appointment.branch}</td>
                                                 <td>{appointment.date}</td>
                                                 <td>{appointment.time}</td>
-                                                <td><Button>Manage</Button></td>
+                                                <td><NavLink to="/ManageAppointment" ><Button onClick={() => this.props.handleSelect(index)}>Manage</Button></NavLink></td>
                                             </tr>
                                         )
-                                    })}
-                                    
+                                    })} 
                                 </tbody>
-                                
                             </Table> 
             </div>
         </span> );
