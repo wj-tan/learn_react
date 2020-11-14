@@ -21,6 +21,7 @@ class app extends Component {
     this.handleAppointment = this.handleAppointment.bind(this);
     this.handleAddAppointment = this.handleAddAppointment.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleCancelAppointment = this.handleCancelAppointment.bind(this);
     this.state = {
       //Create user
       user : {
@@ -56,6 +57,16 @@ class app extends Component {
     this.setState({selectedAppointment : index})
   }
 
+  //Cancel Appointment
+  handleCancelAppointment(index){
+    if (window.confirm("Confirm")) {
+      this.state.appointments.splice(index,1);
+      alert("Appointment has been cancelled");
+    } else {
+      alert("Appointment cancel unsucessful");
+    }
+  }
+
   handleclick(input1, input2, input3, input4) {
     this.setState(prevState => ({
       profile: {
@@ -74,6 +85,8 @@ class app extends Component {
         appointments: newArray
     })
   }
+
+ 
 
   handleAppointment(appointmentObj) {
     this.setState({
@@ -100,7 +113,7 @@ class app extends Component {
               <MyAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect}/>
             </Route>
             <Route exact path={['/ManageAppointment']}>
-              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment}/>
+              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment} handleCancelAppointment={this.handleCancelAppointment}/>
             </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>
