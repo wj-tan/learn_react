@@ -388,3 +388,7 @@ h3 {
 #radiotime {
 	padding: 5px;
 }
+#tablex {
+	justify-content: center;
+	margin: auto;
+}

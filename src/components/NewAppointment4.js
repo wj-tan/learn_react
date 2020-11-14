@@ -48,7 +48,7 @@ class NewAppointment4 extends Component {
                     </Col>
 
                     <Col>
-                        <NavLink to="/Home" onClick={() => this.handleclick()}><Button variant="primary" type="submit" block>Confirm Booking</Button></NavLink>
+                        <NavLink to="/MyAppointment" onClick={() => this.handleclick()}><Button variant="primary" type="submit" block>Confirm Booking</Button></NavLink>
                     </Col>
 
                 </Form>
