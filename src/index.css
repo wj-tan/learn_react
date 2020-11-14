@@ -342,7 +342,7 @@ h3 {
   text-align: center;
 }
 
-#map, #branch {
+#map, #branch, #center {
 	display: flex;
 	justify-content: center;
 }
