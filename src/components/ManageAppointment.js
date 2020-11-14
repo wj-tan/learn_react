@@ -7,7 +7,9 @@ import Row from 'react-bootstrap/Row';
 class ManageAppointment extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+
+         }
     }
     render() { 
         return ( 
@@ -49,7 +51,7 @@ class ManageAppointment extends Component {
                 <div id="branch">
                     <Row>
                         <Col>
-                            <Button size="lg" >Cancel</Button>
+                            <NavLink to="/MyAppointment"><Button size="lg" onClick={() => this.props.handleCancelAppointment(this.props.selectedAppointment)}>Cancel</Button></NavLink>
                         </Col>
                         <Col>
                             <Button size="lg" >Reschedule</Button>

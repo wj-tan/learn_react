@@ -17,7 +17,7 @@ class MyAppointment extends Component {
         return ( 
         
         <span>
-            <h2>My Appointment(s)</h2>
+            <h1>My Appointment(s)</h1>
             <br></br>
             <div id = 'center'>
                     
