@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink, Redirect } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyQueue from './components/MyQueue';
