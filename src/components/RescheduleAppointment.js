@@ -8,14 +8,29 @@ class RescheduleAppointment extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-
+            tempDate : this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.date),
+            tempTime: this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.time),
+            selected : this.props.selectedAppointment
          }
     }
+
+    handleclick() {
+        const appointment = {
+            //Fields
+            branch : this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.branch),
+            purpose : this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.purpose),
+            date : this.state.tempDate,
+            time : this.state.tempTime
+        }
+        this.props.handleEditCancel(this.state.selected)
+        this.props.handleEditAdd(appointment)
+    }
+
     render() { 
         return ( 
             <span>
             <br></br>
-                <h2>Manage Appointment</h2>
+                <h2>Reschedule Appointment</h2>
                 <br></br>
     
                 <Form>
@@ -33,17 +48,25 @@ class RescheduleAppointment extends Component {
                         </Form.Group>
                     </Col>
         
+        
                     <Col>
                         <Form.Group controlId="formDate">
-                            <Form.Label>Date : </Form.Label>
-                            <Form.Control value={this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.date)}disabled></Form.Control>
+                            <Form.Label>Date</Form.Label><br></br>
+                            <input type="date" value={this.state.tempDate} onChange={(e)=>this.setState({tempDate : e.target.value})}></input>
                         </Form.Group>
                     </Col>
                     
                     <Col>
                         <Form.Group controlId="formTime">
-                            <Form.Label>Time : </Form.Label>
-                            <Form.Control value={this.props.appointments.filter(appointment => (appointment.id == this.props.selectedAppointment)).map(appointment => appointment.time)}disabled></Form.Control>
+                            <Form.Label>Time Slot</Form.Label>
+                            <Form.Control as="select" value={this.state.tempTime} onChange={(e)=>this.setState({tempTime : e.target.value})}>
+                                <option value='10AM'>10AM</option>
+                                <option value='11AM'>11AM</option>
+                                <option value='2PM'>2PM</option>
+                                <option value='3PM'>3PM</option>
+                                <option value='4PM'>4PM</option>
+                                <option value='5PM'>5PM</option>
+                            </Form.Control>
                         </Form.Group>
                     </Col>
                 </Form>
@@ -51,10 +74,7 @@ class RescheduleAppointment extends Component {
                 <div id="branch">
                     <Row>
                         <Col>
-                            <NavLink to="/MyAppointment"><Button size="lg" onClick={() => this.props.handleCancelAppointment(this.props.selectedAppointment)}>Cancel</Button></NavLink>
-                        </Col>
-                        <Col>
-                            <Button size="lg" >Reschedule</Button>
+                        <NavLink to="/MyAppointment"><Button size="lg" onClick={() => this.handleclick()}>Reschedule</Button></NavLink>
                         </Col>
                     </Row>
                 </div>
