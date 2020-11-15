@@ -30,7 +30,7 @@ class RescheduleAppointment extends Component {
         return ( 
             <span>
             <br></br>
-                <h2>Reschedule Appointment</h2>
+                <h1>Reschedule Appointment</h1>
                 <br></br>
     
                 <Form>

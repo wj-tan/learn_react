@@ -17,7 +17,7 @@ class MyProfile extends Component {
     render() {
         return (<span>
             <br></br>
-            <h2>My Profile</h2>
+            <h1>My Profile</h1>
             <Form>
                 <Col>
                     <Form.Group controlId="formName">

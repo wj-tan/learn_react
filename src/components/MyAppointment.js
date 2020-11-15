@@ -25,18 +25,19 @@ class MyAppointment extends Component {
         return ( 
         
         <span>
+            <pre class="tab"></pre>
             <h1>My Appointment(s)</h1>
             <br></br>
-            <div id="branch">
+            <div id="upcoming_past_all">
                 <Row>
                     <Col>
-                        <Button variant="primary" size="lg" onClick={() => this.setState({ selectedMode: 'Upcoming' })}>Upcoming</Button>
+                        <Button id='all_btn' variant="primary" size="lg" onClick={() => this.setState({ selectedMode: 'All' })}>All</Button>
                     </Col>
                     <Col>
-                        <Button variant="primary" size="lg" onClick={() => this.setState({ selectedMode: 'Past' })}>Past</Button>
+                        <Button id='upcoming_btn' variant="primary" size="lg" onClick={() => this.setState({ selectedMode: 'Upcoming' })}>Upcoming</Button>
                     </Col>
                     <Col>
-                        <Button variant="primary" size="lg" onClick={() => this.setState({ selectedMode: 'All' })}>All</Button>
+                        <Button id='past_btn' variant="primary" size="lg" onClick={() => this.setState({ selectedMode: 'Past' })}>Past</Button>
                     </Col>
                 </Row>
             </div>

@@ -30,7 +30,7 @@ class NewAppointment3_1 extends Component {
         return ( 
             <span>
             <br></br>
-                <h2>New Appointment</h2>
+                <h1>New Appointment</h1>
                 <br></br>
                 <Form>
                     <Col>

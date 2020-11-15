@@ -15,16 +15,22 @@ class NewAppointment extends Component {
                 <h3>For Pre-Registration</h3>
                 <pre class="tab"></pre>
                 
-                <div id="branchbtn">
-                    <NavLink to="NewAppointment2"><Button size="lg">Select Branch</Button></NavLink>
+                <div id="container_buttons">
+                    <NavLink class="a_demo_four" to='/NewAppointment2'>Select Branch</NavLink>
                 </div>
+                {/* <div id="branchbtn">
+                    <NavLink to="NewAppointment2"><Button size="lg">Select Branch</Button></NavLink>
+                </div> */}
                 <pre class="tab"></pre>
                 <pre class="tab"></pre>
                 <h3>For Walk-In</h3>
                 <pre class="tab"></pre>
-                <div id="qrbtn">
-                    <Button size="lg">Scan QR Code</Button>
+                <div id="container_buttons">
+                    <NavLink class="a_demo_four" to=''>Scan QR</NavLink>
                 </div>
+                {/* <div id="qrbtn">
+                    <Button size="lg">Scan QR Code</Button>
+                </div> */}
             </div>
          );
     }

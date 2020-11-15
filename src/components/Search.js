@@ -12,8 +12,8 @@ class Search extends Component {
     render() {
         return (<span>
             <br></br>
-            <h2>Search Branches</h2>
-            {/* Do a dropdown to insert value into selected Area */}
+            <h1>Search Branches</h1>
+            <pre class="tab"></pre>
             <div id="branch">
                 <Row>
                     <Col>
