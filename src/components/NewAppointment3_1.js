@@ -12,7 +12,7 @@ class NewAppointment3_1 extends Component {
             branch : 'Home Team Academy',
             purpose : 'Consultation',
             date : '',
-            time : '10AM'
+            time : '10:00'
         }
     }
     handleclick() {
@@ -61,12 +61,12 @@ class NewAppointment3_1 extends Component {
                         <Form.Group controlId="formTime">
                             <Form.Label>Time Slot</Form.Label>
                             <Form.Control as="select" value = {this.state.time}  onChange={(e)=>this.setState({time : e.target.value})}>
-                                <option value='10AM'>10AM</option>
-                                <option value='11AM'>11AM</option>
-                                <option value='2PM'>2PM</option>
-                                <option value='3PM'>3PM</option>
-                                <option value='4PM'>4PM</option>
-                                <option value='5PM'>5PM</option>
+                                <option value='10:00'>10AM</option>
+                                <option value='11:00'>11AM</option>
+                                <option value='14:00'>2PM</option>
+                                <option value='15:00'>3PM</option>
+                                <option value='16:00'>4PM</option>
+                                <option value='17:00'>5PM</option>
                             </Form.Control>
                         </Form.Group>
                     </Col>
