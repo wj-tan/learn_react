@@ -8,9 +8,20 @@ import Row from 'react-bootstrap/Row';
 class Home extends Component {
     constructor(props) {
         super(props);
+        var date = new Date().getDate(); //To get the Current Date
+        var month = new Date().getMonth() + 1; //To get the Current Month
+        var year = new Date().getFullYear(); //To get the Current Year
+        var hours = new Date().getHours(); //To get the Current Hours
+        var min = new Date().getMinutes(); //To get the Current Minutes
 
         this.state = {
             selectedMode: "",
+            currentTime: (year + "-" + month + "-" + date),
+            currentHour: parseInt(hours),
+            currentMin: (min),
+            last2 : '',
+            twentyfourhrs : '',
+            exampleTime : ''
         }
     }
     render() {
@@ -28,7 +39,8 @@ class Home extends Component {
                 <h1 id="nric">{this.props.profile.nric}</h1>
 
                 <pre class="tab"></pre>
-
+                {/* <h2 id="datetime">{this.state.currentHour}</h2>
+                <h2 id="datetime">{this.state.currentMin}</h2> */}
             </p>
 
             <pre class="tab"></pre>
@@ -41,9 +53,48 @@ class Home extends Component {
             <pre class="tab"></pre>
             <pre class="tab"></pre>
 
-            {/* <p class="btnwrap">
-                <a class="button-one" title="Relevant Title" href="#">Upcoming</a><a class="button-two" title="Relevant Title" href="#"> Missed</a><a class="button-three" title="Relevant Title" href="#">  Open </a>
-            </p> */}
+            <div id = 'center'>
+            {(() => {
+                if (this.props.appointments.filter(appointment => (appointment.date == this.state.currentTime))){
+                    // (this.props.appointments) && this.props.appointments.filter(appointment => (appointment.date == this.state.currentTime)).map((appointment) => {
+                    //     this.state.exampleTime = appointment.time;
+                    //     this.state.last2 = this.state.exampleTime.slice(-2);
+                    //     this.state.twentyfourhrs = appointment.time.slice(0,-2)
+                    // });
+                    // if (this.state.last2 == 'PM'){
+                    //     this.state.twentyfourhrs =  parseInt(this.state.twentyfourhrs)+12
+                    // }
+                    // if (15 - this.state.twentyfourhrs == 1){
+                        return (
+                            <Table id="tablex">
+                                <thead>
+                                    <tr>
+                                        <th>Branch</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Purpose</th>
+                                        <th>ETA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {(this.props.appointments) && this.props.appointments.filter(appointment => (appointment.date == this.state.currentTime && (this.state.currentHour-parseInt(appointment.time.slice(0,-3)) <= 1) && (this.state.currentHour-parseInt(appointment.time.slice(0,-3)) > 0))).map((appointment, index) => {
+                                        return (
+                                            <tr>
+                                                <td>{appointment.branch}</td>
+                                                <td>{appointment.date}</td>
+                                                <td>{appointment.time}</td>
+                                                <td>{appointment.purpose}</td>
+                                                <td>{(this.state.currentHour-parseInt(appointment.time.slice(0,-3)))} hr </td>
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </Table>);
+                    // }
+                }
+                // if appt date&time == systemdate&time -15mins, display
+            })()} 
+            </div>
 
             
 
