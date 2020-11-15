@@ -54,7 +54,7 @@ class ManageAppointment extends Component {
                             <NavLink to="/MyAppointment"><Button size="lg" onClick={() => this.props.handleCancelAppointment(this.props.selectedAppointment)}>Cancel</Button></NavLink>
                         </Col>
                         <Col>
-                            <Button size="lg" >Reschedule</Button>
+                            <NavLink to="/RescheduleAppointment" ><Button size="lg" onClick={() => this.props.handleSelect(this.props.selectedAppointment)}>Reschedule</Button></NavLink>
                         </Col>
                     </Row>
                 </div>
