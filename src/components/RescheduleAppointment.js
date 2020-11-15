@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 
-class ManageAppointment extends Component {
+class RescheduleAppointment extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -64,4 +64,4 @@ class ManageAppointment extends Component {
     }
 }
  
-export default ManageAppointment;
+export default RescheduleAppointment;
