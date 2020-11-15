@@ -56,7 +56,6 @@ class MyAppointment extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     {(this.props.appointments) && this.props.appointments.filter(appointment => (appointment.date >= this.state.currentTime) ).map((appointment, index) => {
                                         return (
                                             <tr>
