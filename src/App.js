@@ -14,6 +14,7 @@ import NewAppointment4 from './components/NewAppointment4';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
 import Login from './components/Login';
+import RescheduleAppointment from './components/RescheduleAppointment';
 
 class app extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class app extends Component {
     this.handleAddAppointment = this.handleAddAppointment.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleCancelAppointment = this.handleCancelAppointment.bind(this);
+    this.handleEditCancel = this.handleEditCancel.bind(this);
+    this.handleEditAdd = this.handleEditAdd.bind(this);
     this.state = {
       //Create user
       user : {
@@ -69,6 +72,10 @@ class app extends Component {
     }
   }
 
+  handleEditCancel(index){
+    this.state.appointments.splice(this.state.appointments.findIndex(e => e.id === index),1);
+  }
+
   handleclick(input1, input2, input3, input4) {
     this.setState(prevState => ({
       profile: {
@@ -85,6 +92,7 @@ class app extends Component {
       count : count + 1
     })
   }
+
   handleAddAppointment(appObj){
     this.additional(this.state.count)
     appObj.id = this.state.count
@@ -99,12 +107,22 @@ class app extends Component {
       tempAppointment: appointmentObj
     })
   }
+
+  handleEditAdd(appObj){
+    this.additional(this.state.count)
+    appObj.id = this.state.count
+    var newArray = this.state.appointments.concat(appObj)
+    this.setState({
+        appointments: newArray
+    })
+  }
  
   handleEditAppointment(appObj){
     this.setState({
         tempEdit : appObj
     })
   }
+
   render() {
 
     if (window.location.pathname != '/Login') {
@@ -122,7 +140,7 @@ class app extends Component {
               <MyAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect}/>
             </Route>
             <Route exact path={['/ManageAppointment']}>
-              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment} handleCancelAppointment={this.handleCancelAppointment}/>
+              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment} handleCancelAppointment={this.handleCancelAppointment} handleSelect={this.handleSelect}/>
             </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>
@@ -150,6 +168,9 @@ class app extends Component {
             </Route>
             <Route exact path={['/Login']}>
               <Login user = {this.state.user} />
+            </Route>
+            <Route exact path={['/RescheduleAppointment']}>
+            <RescheduleAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect} selectedAppointment={this.state.selectedAppointment} handleEditCancel={this.handleEditCancel} handleEditAdd={this.handleEditAdd}/>
             </Route>
           </Switch>
           <span>
@@ -207,6 +228,9 @@ class app extends Component {
             </Route>
             <Route exact path={['/Login']}>
               <Login user = {this.state.user} />
+            </Route>
+            <Route exact path={['/RescheduleAppointment']}>
+            <RescheduleAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect} selectedAppointment={this.state.selectedAppointment} handleEditCancel={this.handleEditCancel} handleEditAdd={this.handleEditAdd}/>
             </Route>
           </Switch>
         </Router>
