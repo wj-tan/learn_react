@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink, Redirect } from 'react-router-dom';
 //import Paragraph from './components/paragraph';
 import Home from './components/Home';
 import MyQueue from './components/MyQueue';
@@ -11,6 +11,7 @@ import NewAppointment3_1 from './components/NewAppointment3_1';
 import NewAppointment3_2 from './components/NewAppointment3_2';
 import NewAppointment3_3 from './components/NewAppointment3_3';
 import NewAppointment4 from './components/NewAppointment4';
+import RescheduleAppointment from './components/RescheduleAppointment';
 import Search from './components/Search';
 import MyProfile from './components/MyProfile';
 import Login from './components/Login';
@@ -23,11 +24,14 @@ class app extends Component {
     this.handleAddAppointment = this.handleAddAppointment.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleCancelAppointment = this.handleCancelAppointment.bind(this);
+    this.handleEditCancel = this.handleEditCancel.bind(this);
+    this.handleEditAdd = this.handleEditAdd.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
     this.state = {
       //Create user
       user : {
         username : 'Tan Ah Beng',
-        password : '1234'
+        password : '1234',
       },
       //Create profile state 
       profile : {
@@ -51,8 +55,14 @@ class app extends Component {
       appointments : [],
       tempAppointment : [],
       tempEdit : [],
-      count : 1
+      count : 1,
+      login: false
     }
+  }
+  handleLogin(){
+    this.setState({
+      login : true
+    })
   }
 
   handleSelect(index) {
@@ -100,18 +110,33 @@ class app extends Component {
     })
   }
  
+  handleEditAdd(appObj){
+    this.additional(this.state.count)
+    appObj.id = this.state.count
+    var newArray = this.state.appointments.concat(appObj)
+    this.setState({
+        appointments: newArray
+    })
+  }
+ 
   handleEditAppointment(appObj){
     this.setState({
         tempEdit : appObj
     })
   }
-  render() {
+  handleEditCancel(index){
+    this.state.appointments.splice(this.state.appointments.findIndex(e => e.id === index),1);
+  }
 
-    if (window.location.pathname != '/Login') {
+  render() {
+    
       return (<div id='content'>
         {/* Content */}
         <Router>
           <Switch>
+            <Route exact path={['']}>
+              <Redirect to='/Login'/>
+            </Route>
             <Route exact path={['/Home']}>
               <Home profile = {this.state.profile} appointments = {this.state.appointments} />
             </Route>
@@ -122,7 +147,7 @@ class app extends Component {
               <MyAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect}/>
             </Route>
             <Route exact path={['/ManageAppointment']}>
-              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment} handleCancelAppointment={this.handleCancelAppointment}/>
+              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment} handleCancelAppointment={this.handleCancelAppointment} handleSelect={this.handleSelect}/>
             </Route>
             <Route exact path={['/NewAppointment1']}>
               <NewAppointment profile = {this.state.profile}/>
@@ -149,69 +174,30 @@ class app extends Component {
               <MyProfile profile = {this.state.profile} handleclick={this.handleclick} /> 
             </Route>
             <Route exact path={['/Login']}>
-              <Login user = {this.state.user} />
+              <Login user = {this.state.user} handleLogin={this.handleLogin}/>
+            </Route>
+            <Route exact path={['/RescheduleAppointment']}>
+              <RescheduleAppointment appointments = {this.state.appointments} handleSelect={this.handleSelect} selectedAppointment={this.state.selectedAppointment} handleEditCancel={this.handleEditCancel} handleEditAdd={this.handleEditAdd}/>
             </Route>
           </Switch>
-          <span>
-              {console.log(this.state.tempAppointment)}
-              {console.log(this.state.appointments)}
-          </span>
-          <div style={{ display: 'flex' }}>
-            <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
-            <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>
-            <NavLink to='/NewAppointment1'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></NavLink>
-            <NavLink to='/Search'><button variant="primary"><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></NavLink>
-            <NavLink to='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></NavLink>
-          </div>
+        
+          {
+            (this.state.login) ?
+              (
+                <div style={{ display: 'flex' }}>
+                  <NavLink to='/Home'><button variant="primary"><img src="home_icon.png" alt="" width='50px' height='50px'></img>Home&nbsp;</button></NavLink>
+                  <NavLink to='/MyAppointment'><button variant="primary"><img src="appointment.png" alt="" width='50px' height='50px'></img>Bookings&nbsp;</button></NavLink>
+                  <NavLink to='/NewAppointment1'><button variant="primary"><img src="new_icon.png" alt="" width='50px' height='50px'></img>New&nbsp;</button></NavLink>
+                  <NavLink to='/Search'><button variant="primary"><img src="search_icon.png" alt="" width='50px' height='50px'></img>Search&nbsp;</button></NavLink>
+                  <NavLink to='/MyProfile'><button variant="primary"><img src="profile_icon.png" alt="" width='50px' height='50px'></img>Profile&nbsp;</button></NavLink>
+                </div>
+              ) : (
+                    <></>
+            )
+          }
         </Router>
+        
       </div>);
-    }
-
-    else {
-      return (<div id='content'>
-        {/* Content */}
-        <Router>
-          <Switch>
-            <Route exact path={['/Home']}>
-              <Home profile = {this.state.profile} appointments = {this.state.appointments} />
-            </Route>
-            <Route exact path={['/MyAppointment']}>
-              <MyAppointment appointments = {this.state.appointments}/>
-            </Route>
-            <Route exact path={['/ManageAppointment']}>
-              <ManageAppointment appointments = {this.state.appointments} selectedAppointment={this.state.selectedAppointment}/>
-            </Route>
-            <Route exact path={['/NewAppointment1']}>
-              <NewAppointment profile = {this.state.profile}/>
-            </Route>
-            <Route exact path={['/NewAppointment2']}>
-              <NewAppointment2 />
-            </Route>
-            <Route exact path={['/NewAppointment3_1']}>
-              <NewAppointment3_1 handleAppointment={this.handleAppointment} />
-            </Route>
-            <Route exact path={['/NewAppointment3_2']}>
-              <NewAppointment3_2 handleAppointment={this.handleAppointment} />
-            </Route>
-            <Route exact path={['/NewAppointment3_3']}>
-              <NewAppointment3_3 handleAppointment={this.handleAppointment} />
-            </Route>
-            <Route exact path={['/NewAppointment4']}>
-              <NewAppointment4 tempAppointment = {this.state.tempAppointment} handleAddAppointment={this.handleAddAppointment}/>
-            </Route>
-            <Route exact path={['/Search']}>
-              <Search />
-            </Route>
-            <Route exact path={['/MyProfile']}>
-              <MyProfile profile = {this.state.profile} handleclick={this.handleclick} /> 
-            </Route>
-            <Route exact path={['/Login']}>
-              <Login user = {this.state.user} />
-            </Route>
-          </Switch>
-        </Router>
-      </div>);
-    }
 
   }
 }

@@ -12,6 +12,7 @@ function Login (props) {
     console.log(props.user.username)
     const CheckLogin = () =>{
         if ((props.user.username == username) && (props.user.password == password)){
+            props.handleLogin()
             history.push('/Home')
         }
 
